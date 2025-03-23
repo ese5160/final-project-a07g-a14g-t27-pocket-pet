@@ -153,6 +153,24 @@ void LogMessage(enum eDebugLogLevels level, const char *format, ...)
 {
     // Todo: Implement Debug Logger
 	// More detailed descriptions are in header file
+	// Todo: Implement Debug Logger
+    if (level < currentDebugLevel || level >= N_DEBUG_LEVELS)
+    {
+        return; // Do not print anything
+    }
+
+	char buffer[256]; // Buffer to hold the formatted string
+
+	va_list args;
+	va_start(args, format);
+
+	vsnprintf(buffer, sizeof(buffer), format, args); // Format the string
+
+	va_end(args);
+
+	SerialConsoleWriteString(buffer); // Send the formatted string to the UART
+	// More detailed descriptions are in header file
+
 }
 
 /*
