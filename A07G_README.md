@@ -101,16 +101,16 @@ Additionally, the software supports **NFC-based interactions and multi-mode magn
 | :--------------: | ----------------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------ |
 | **SRS 01** | Wi-Fi Communication     | SAMW and Seeed XIAO ESP32 S3 shall communicate via Wi-Fi.                                   | **Data exchange latency shall not exceed 50ms.**                 | High               |
 | **SRS 02** | LCD Display             | The LCD shall display**interactive animations, AI expressions, and status updates** . | **Response time for animations shall not exceed 100ms.**         | High               |
-| **SRS 03** | Microphone Input        | The microphone shall capture**voice input**for AI-based interactions.                 | **Shall apply DSP-based noise filtering.**                       | High               |
+| **SRS 03** | Microphone Input        | The microphone shall capture voice input for AI-based interactions.                       | **Shall apply DSP-based noise filtering.**                       | High               |
 | **SRS 04** | Camera Input            | The camera shall capture**images for user interaction** .                             | **Processing shall complete within 500ms per image.**            | Medium             |
 | **SRS 05** | Haptic Feedback         | The vibration motor shall provide**tactile feedback**during user interactions.        | **Shall activate within 50ms.**                                  | Medium             |
-| **SRS 06** | Sound Output            | The speaker shall output**AI-generated sounds and alerts** .                          | **Latency shall not exceed 50ms.**                               | High               |
+| **SRS 06** | Sound Output            | The speaker shall output **AI-generated sounds and alerts** .                        | **Latency shall not exceed 50ms.**                               | High               |
 | **SRS 07** | Button Input            | Buttons shall serve as**interaction triggers** .                                      | **Response time shall be within 50ms.**                          | High               |
 | **SRS 08** | NFC ID Check            | The system shall provide**ID and birthday details via NFC** .                         | **Users shall tap their phone to access this data instantly.**   | High               |
 | **SRS 09** | Magnetic Mode Switching | The system shall support**desktop, outdoor, and iPhone gadget mode** .                | **The user shall be able to switch modes seamlessly.**           | High               |
 | **SRS 10** | BLE Connectivity        | The system shall support**Bluetooth for external control options** .                  | **BLE 5.0 shall be used for pairing.**                           | High               |
 | **SRS 11** | Power Management        | The system shall optimize**power consumption**based on activity.                      | **Low-power mode shall activate when battery drops below 10%.**  | High               |
-| **SRS 12** | Motion Tracking (IMU)   | The**IMU on SAMW**shall detect **tilt, rotation, and movement** .               | **Motion data shall be logged at 100Hz for smooth tracking.**    | Medium             |
+| **SRS 12** | Motion Tracking (IMU)   | The**IMU on SAMW **shall detect**tilt, rotation, and movement** .              | **Motion data shall be logged at 100Hz for smooth tracking.**    | Medium             |
 | **SRS 13** | Gesture Recognition     | The**IMU shall enable gesture-based interactions**(e.g., **shake to wake** ).   | **The system shall recognize predefined gestures within 200ms.** | Medium             |
 
 ---
@@ -148,12 +148,9 @@ Additionally, the software supports **NFC-based interactions and multi-mode magn
 
 The callback function usart_read_callback() is tiggered when a character is received (RX), while usart_write_callback() is called when a character has been sent (TX). These callbacks are registered inside configure_usart_callbacks(), linking them to the USART interrupt system. This setup ensures effcient handling of UART communication by automatically responding to character transmission and reception events.
 
-
 * Explain what is being done on each of these two callbacks and how they relate to the cbufRx and cbufTx buffers.
 
-
   In usart_read_callback(), when a character is received (RX), it is added to the cbufRx circular buffer, allowing the system to store incoming UART data efficiently, Similarly, in usart_ write_callback(), when a character has been sent (TX), the next character retrieved from cbufTx and transmited via usart_write_buffer_job(), ensuring continuous data transmission. These callbacks manage UART communication asynchronously by using cbufRx and cbufTx to buffer received and transmited characters, preventing data loss and reduang cpu overhead.
-
 * Draw a diagram that explains the program flow for UART receive – starting with the user typing a character and ending with how that characters ends up in the circular buffer “cbufRx”. Please make reference to specific functions in the starter code.
 
   ![1742870211048](image/A07G_README/1742870211048.png)
@@ -178,13 +175,11 @@ Based on the starter code, RX is connected to PB11 of SAMW25, channel 3 of logic
 
 We can find **test pads** or **pin headers** for PB10 (TX) and PB11 (RX).
 
-Debug Header: J200 or similar
-
-Direct Pin Soldering: Last Resort
-
 **3. What are critical settings for the logic analyzer?**
 
-Baud Rate: 115200
+Async Serial Mode with:
+
+Bit Rate: 115200
 
 Data Bits: 8
 
