@@ -8,6 +8,20 @@
 
 ## **1. Software Architecture**
 
+![1742870869817](image/A07G_README/1742870869817.png)
+
+![1742870879221](image/A07G_README/1742870879221.png)![1742870888269](image/A07G_README/1742870888269.png)
+
+![1742870812691](image/A07G_README/1742870812691.png)
+
+![1742870822831](image/A07G_README/1742870822831.png)
+
+printing failure, would tune again.
+
+![1742871021106](image/A07G_README/1742871021106.png)
+
+![1742871010176](image/A07G_README/1742871010176.png)
+
 #### 1.1 Updated HRS & SRS
 
 #### **1.1.1 Hardware Requirements Specification (HRS)**
