@@ -115,6 +115,7 @@ Additionally, the software supports **NFC-based interactions and multi-mode magn
 
 #### 1.3 Flowcharts or state machine diagrams
 
+![1742868929047](image/A07G_README/1742868929047.png)
 
 ## **2. Understanding the Starter Code**
 
