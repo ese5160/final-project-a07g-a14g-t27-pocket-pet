@@ -14,7 +14,7 @@
 /******************************************************************************
  * Defines
  ******************************************************************************/
-
+#define FIRMWARE_VERSION  "0.0.1"
 /******************************************************************************
  * Variables
  ******************************************************************************/
@@ -36,6 +36,24 @@ static const CLI_Command_Definition_t xResetCommand =
         (const pdCOMMAND_LINE_CALLBACK)CLI_ResetDevice,
         0};
 
+static const CLI_Command_Definition_t xVersionCommand =
+{
+	"version",            // The command name
+	"version:\r\n Prints the firmware version.\r\n",   // Help text
+	 CLI_VersionCommand, // <-- Callback function pointer
+	 0 // Number of expected parameters        // Number of expected parameters (0 here)
+};
+
+static const CLI_Command_Definition_t xTicksCommand =
+{
+	"ticks",              // The command name
+	"ticks:\r\n Prints the number of ticks since the scheduler started.\r\n", // Help text
+	 CLI_TicksCommand,     // The callback function
+	 0                     // Number of expected parameters (0 here)
+};
+
+
+
 /******************************************************************************
  * Forward Declarations
  ******************************************************************************/
@@ -47,6 +65,7 @@ static void FreeRTOS_read(char *character);
 /******************************************************************************
  * CLI Thread
  ******************************************************************************/
+#define FIRMWARE_VERSION  "0.0.1"
 
 void vCommandConsoleTask(void *pvParameters)
 {
@@ -54,6 +73,9 @@ void vCommandConsoleTask(void *pvParameters)
 
     FreeRTOS_CLIRegisterCommand(&xClearScreen);
     FreeRTOS_CLIRegisterCommand(&xResetCommand);
+	FreeRTOS_CLIRegisterCommand(&xVersionCommand);
+	FreeRTOS_CLIRegisterCommand(&xTicksCommand);
+	
 
     uint8_t cRxedChar[2], cInputIndex = 0;
     BaseType_t xMoreDataToFollow;
@@ -217,7 +239,16 @@ void vCommandConsoleTask(void *pvParameters)
 static void FreeRTOS_read(char *character)
 {
     // ToDo: Complete this function
-    vTaskSuspend(NULL); // We suspend ourselves. Please remove this when doing your code
+    // Block until a character is available (the semaphore is given in the USART callback)
+    if (xSemaphoreTake(xSemaphore, portMAX_DELAY) == pdTRUE)
+    {
+	    // Retrieve the character from the circular RX buffer
+	    if (circular_buf_get(cbufRx, (uint8_t *)character) == -1)
+	    {
+		    // In the unlikely event the buffer is empty, set the character to null
+		    *character = '\0';
+	    }
+    }
 }
 
 /******************************************************************************
@@ -241,4 +272,19 @@ BaseType_t CLI_ResetDevice(int8_t *pcWriteBuffer, size_t xWriteBufferLen, const 
 {
     system_reset();
     return pdFALSE;
+}
+
+BaseType_t CLI_VersionCommand(int8_t *pcWriteBuffer, size_t xWriteBufferLen, const int8_t *pcCommandString)
+{
+	snprintf(pcWriteBuffer, xWriteBufferLen, "Firmware version: %s\r\n", FIRMWARE_VERSION);
+	return pdFALSE;  // pdFALSE indicates no more output to return
+}
+
+
+BaseType_t CLI_TicksCommand(int8_t *pcWriteBuffer, size_t xWriteBufferLen, const int8_t *pcCommandString)
+{
+	// xTaskGetTickCount() returns the number of ticks since the scheduler started
+	TickType_t ticks = xTaskGetTickCount();
+	snprintf(pcWriteBuffer, xWriteBufferLen, "Ticks: %lu\r\n", (unsigned long)ticks);
+	return pdFALSE;
 }

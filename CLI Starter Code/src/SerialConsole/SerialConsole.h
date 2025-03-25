@@ -77,6 +77,8 @@ void DeinitializeSerialConsole(void);
  *****************************************************************************/
 void SerialConsoleWriteString(char * string);
 
+extern cbuf_handle_t cbufRx;
+
 /**
  * @fn			int SerialConsoleReadCharacter(uint8_t *rxChar)
  * @brief		Reads a character from the RX ring buffer and stores it on the pointer given as an argument.

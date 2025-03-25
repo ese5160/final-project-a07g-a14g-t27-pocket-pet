@@ -34,13 +34,15 @@
 #define RX_BUFFER_SIZE 512 ///< Size of character buffer for RX, in bytes
 #define TX_BUFFER_SIZE 512 ///< Size of character buffers for TX, in bytes
 
+
+
 /******************************************************************************
  * Structures and Enumerations
  ******************************************************************************/
 cbuf_handle_t cbufRx; ///< Circular buffer handler for receiving characters
 cbuf_handle_t cbufTx; ///< Circular buffer handler for transmitting characters
 
-char latestRx; ///< Holds the latest character received
+char latestRx; ///< Holds the latest character received 
 char latestTx; ///< Holds the latest character to be transmitted
 
 /******************************************************************************
@@ -62,6 +64,7 @@ struct usart_module usart_instance;
 char rxCharacterBuffer[RX_BUFFER_SIZE]; 			   ///< Buffer to store received characters
 char txCharacterBuffer[TX_BUFFER_SIZE]; 			   ///< Buffer to store characters to be sent
 enum eDebugLogLevels currentDebugLevel = LOG_INFO_LVL; ///< Default debug level
+SemaphoreHandle_t xSemaphore = NULL;         ///< Semaphore for synchronizing access to the UART
 
 /******************************************************************************
  * Global Functions
@@ -79,6 +82,7 @@ void InitializeSerialConsole(void)
     // Configure USART and Callbacks
 	configure_usart();
     configure_usart_callbacks();
+	xSemaphore = xSemaphoreCreateBinary();
     NVIC_SetPriority(SERCOM4_IRQn, 10);
 
     usart_read_buffer_job(&usart_instance, (uint8_t *)&latestRx, 1); // Kicks off constant reading of characters
@@ -153,13 +157,12 @@ void LogMessage(enum eDebugLogLevels level, const char *format, ...)
 {
     // Todo: Implement Debug Logger
 	// More detailed descriptions are in header file
-	// Todo: Implement Debug Logger
     if (level < currentDebugLevel || level >= N_DEBUG_LEVELS)
     {
         return; // Do not print anything
     }
 
-	char buffer[256]; // Buffer to hold the formatted string
+	char buffer[512]; // Buffer to hold the formatted string
 
 	va_list args;
 	va_start(args, format);
@@ -236,9 +239,19 @@ static void configure_usart_callbacks(void)
 		 Students to fill out. Please note that the code here is dummy code. It is only used to show you how some functions work.
  * @note
  *****************************************************************************/
+
+
 void usart_read_callback(struct usart_module *const usart_module)
 {
-	// ToDo: Complete this function 
+	// ToDo: Complete this function
+	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+	circular_buf_put(cbufRx, latestRx);
+	usart_read_buffer_job(&usart_instance, (uint8_t *)&latestRx, 1); // Kicks off constant reading of characters
+	if (xSemaphore != NULL)
+	{
+		xSemaphoreGiveFromISR(xSemaphore, &xHigherPriorityTaskWoken);
+		portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+	}
 }
 
 /**************************************************************************/ 
