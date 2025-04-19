@@ -89,6 +89,7 @@ void InitializeSerialConsole(void)
     usart_read_buffer_job(&usart_instance, (uint8_t *)&latestRx, 1);
 
     // Additional initialization calls can be added here.
+	SerialConsoleWriteString("\r\n*** SERIAL CONSOLE INITIALIZED ***\r\n> ");
 }
 
 /**************************************************************************//**
@@ -266,6 +267,7 @@ void usart_read_callback(struct usart_module *const usart_module)
 {
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
     circular_buf_put(cbufRx, latestRx);
+	SerialConsoleWriteString((char[]){ latestRx, '\0' });
     usart_read_buffer_job(&usart_instance, (uint8_t *)&latestRx, 1); // Restart reading
     if (xSemaphore != NULL)
     {

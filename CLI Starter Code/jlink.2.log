@@ -1,0 +1,344 @@
+T6DC4 211:648.384   SEGGER J-Link V8.26 Log File
+T6DC4 211:648.640   DLL Compiled: Apr 11 2025 07:49:49
+T6DC4 211:648.704   Logging started @ 2025-04-19 19:22
+T6DC4 211:648.752   Process: C:\Program Files (x86)\Atmel\Studio\7.0\atbackend\atbackend.exe
+T6DC4 211:648.816 - 62.656ms 
+T6DC4 211:648.880 JLINK_ExecCommand("device = ATSAMD21G18A", ...). 
+T6DC4 211:649.248   Device "ATSAMD21G18A" selected.
+T6DC4 211:649.840 - 0.925ms returns 0x00
+T6DC4 211:649.888 JLINK_GetHWStatus(...)
+T6DC4 211:650.304 - 0.423ms returns 0
+T6DC4 211:650.336 JLINK_ClrRESET()
+T6DC4 211:650.544 - 0.197ms 
+T6DC4 211:658.080 JLINK_SetRESET()
+T6DC4 211:658.272 - 0.189ms 
+T6DC4 211:664.096 JLINK_ClrRESET()
+T6DC4 211:664.480 - 0.391ms 
+T6DC4 211:670.064 JLINK_ClrTCK()
+T6DC4 211:670.432 - 0.354ms returns 0
+T6DC4 211:675.088 JLINK_SetRESET()
+T6DC4 211:675.168 - 0.091ms 
+T6DC4 211:682.080 JLINK_Clock()
+T6DC4 211:682.304 - 0.211ms returns 1
+T6DC4 211:689.056 JLINK_TIF_Select(JLINKARM_TIF_SWD)
+T6DC4 211:689.600 - 0.540ms returns 0x00
+T6DC4 211:689.632 JLINK_SetSpeed(50)
+T6DC4 211:689.712 - 0.091ms 
+T6DC4 211:689.712 JLINK_CORESIGHT_Configure()
+T6DC4 211:699.280 - 9.557ms returns 0
+T6DC4 211:699.648 JLINK_CORESIGHT_WriteAPDPReg(DP reg 0x02, 0x00000000)
+T6DC4 211:700.832 - 1.170ms returns 0
+T6DC4 211:700.832 JLINK_CORESIGHT_WriteAPDPReg(AP reg 0x00, 0x23000040)
+T6DC4 211:701.952 - 1.116ms returns 0
+T6DC4 211:701.952 JLINK_CORESIGHT_WriteAPDPReg(AP reg 0x01, 0x41002101)
+T6DC4 211:703.072 - 1.124ms returns 0
+T6DC4 211:703.088 JLINK_CORESIGHT_ReadAPDPReg(AP reg 0x03)
+T6DC4 211:705.264   Value=0x10120200
+T6DC4 211:705.264 - 2.183ms returns 0
+T6DC4 211:705.280 JLINK_CORESIGHT_WriteAPDPReg(AP reg 0x01, 0x41002100)
+T6DC4 211:706.416 - 1.144ms returns 0
+T6DC4 211:706.432 JLINK_CORESIGHT_WriteAPDPReg(AP reg 0x03, 0x00000010)
+T6DC4 211:707.584 - 1.151ms returns 0
+T6DC4 211:707.600 JLINK_CORESIGHT_WriteAPDPReg(AP reg 0x01, 0x41002101)
+T6DC4 211:708.752 - 1.149ms returns 0
+T6DC4 211:708.752 JLINK_CORESIGHT_ReadAPDPReg(AP reg 0x03)
+T6DC4 211:710.864   Value=0x11120200
+T6DC4 211:710.880 - 2.116ms returns 0
+T6DC4 211:910.768 JLINK_CORESIGHT_ReadAPDPReg(AP reg 0x03)
+T6DC4 211:912.992   Value=0x10120300
+T6DC4 211:913.008 - 2.243ms returns 0
+T6DC4 211:919.808 JLINK_ExecCommand("Device = ATSAMD21G18A", ...). 
+T6DC4 211:920.048   Device "ATSAMD21G18A" selected.
+T6DC4 211:920.384 - 0.559ms returns 0x00
+T6DC4 211:920.400 JLINK_TIF_Select(JLINKARM_TIF_SWD)
+T6DC4 211:920.400 - 0.006ms returns 0x00
+T6DC4 211:920.416 JLINK_SetSpeed(4000)
+T6DC4 211:920.608 - 0.185ms 
+T6DC4 211:920.640 JLINK_ResetPullsRESET(OFF)
+T6DC4 211:920.640 - 0.006ms 
+T6DC4 211:920.656 JLINK_Connect()
+T6DC4 211:921.120   InitTarget() start
+T6DC4 211:921.120    J-Link Script File: Executing InitTarget()
+T6DC4 211:921.136   InitTarget()
+T6DC4 211:926.432   InitTarget() end - Took 5.28ms
+T6DC4 211:927.152   Found SW-DP with ID 0x0BC11477
+T6DC4 211:929.264   DPIDR: 0x0BC11477
+T6DC4 211:929.296   CoreSight SoC-400 or earlier
+T6DC4 211:929.312   Scanning AP map to find all available APs
+T6DC4 211:930.016   AP[1]: Stopped AP scan as end of AP map has been reached
+T6DC4 211:930.032   AP[0]: AHB-AP (IDR: 0x04770031, ADDR: 0x00000000)
+T6DC4 211:930.064   Iterating through AP map to find AHB-AP to use
+T6DC4 211:930.960   AP[0]: Core found
+T6DC4 211:930.976   AP[0]: AHB-AP ROM base: 0x41003000
+T6DC4 211:931.488   CPUID register: 0x410CC601. Implementer code: 0x41 (ARM)
+T6DC4 211:931.520   Found Cortex-M0 r0p1, Little endian.
+T6DC4 211:931.840   -- Max. mem block: 0x00002B08
+T6DC4 211:932.272   Cortex-M: The connected J-Link (S/N 801056949) uses an old firmware module: V2 (current is 3)
+T6DC4 211:932.288   CPU_ReadMem(4 bytes @ 0xE000EDF0)
+T6DC4 211:932.640   CPU_ReadMem(4 bytes @ 0xE0002000)
+T6DC4 211:933.024   FPUnit: 4 code (BP) slots and 0 literal slots
+T6DC4 211:933.024   CPU_ReadMem(4 bytes @ 0xE000EDFC)
+T6DC4 211:933.344   CPU_ReadMem(4 bytes @ 0xE0001000)
+T6DC4 211:933.728   CPU_WriteMem(4 bytes @ 0xE0001000)
+T6DC4 211:934.112   CoreSight components:
+T6DC4 211:934.208   ROMTbl[0] @ 41003000
+T6DC4 211:934.224   CPU_ReadMem(64 bytes @ 0x41003000)
+T6DC4 211:935.008   CPU_ReadMem(32 bytes @ 0xE00FFFE0)
+T6DC4 211:935.552   [0][0]: E00FF000 CID B105100D PID 000BB4C0 ROM Table
+T6DC4 211:935.568   ROMTbl[1] @ E00FF000
+T6DC4 211:935.584   CPU_ReadMem(64 bytes @ 0xE00FF000)
+T6DC4 211:936.400   CPU_ReadMem(32 bytes @ 0xE000EFE0)
+T6DC4 211:936.960   [1][0]: E000E000 CID B105E00D PID 000BB008 SCS
+T6DC4 211:936.976   CPU_ReadMem(32 bytes @ 0xE0001FE0)
+T6DC4 211:937.568   [1][1]: E0001000 CID B105E00D PID 000BB00A DWT
+T6DC4 211:937.568   CPU_ReadMem(32 bytes @ 0xE0002FE0)
+T6DC4 211:938.144   [1][2]: E0002000 CID B105E00D PID 000BB00B FPB
+T6DC4 211:938.160   CPU_ReadMem(32 bytes @ 0x41006FE0)
+T6DC4 211:938.688   [0][1]: 41006000 CID B105900D PID 001BB932 MTB-M0+
+T6DC4 211:938.720 - 18.058ms returns 0x00
+T6DC4 211:939.008 JLINK_Halt()
+T6DC4 211:942.400 - 3.400ms returns 0x00
+T6DC4 211:943.200 JLINK_JTAG_GetDeviceID(DeviceIndex = 0)
+T6DC4 211:943.200 - 0.012ms returns 0
+T6DC4 211:943.216 JLINK_ReadMemU32(0x41002018, 0x1 Items)
+T6DC4 211:943.232   CPU_ReadMem(4 bytes @ 0x41002018)
+T6DC4 211:943.568   Data:  05 03 01 10
+T6DC4 211:943.584 - 0.362ms returns 1 (0x1)
+T6AC4 211:952.096 JLINK_IsHalted()
+T6AC4 211:952.112 - 0.023ms returns TRUE
+T6AC4 211:952.112 JLINK_GetMOEs(...)
+T6AC4 211:952.128   CPU_ReadMem(4 bytes @ 0xE000ED30)
+T6AC4 211:952.560 - 0.440ms returns 0x01
+T6AC4 211:952.608 JLINK_ReadReg(R15 (PC))
+T6AC4 211:952.608 - 0.009ms returns 0xFFFFFFFE
+T6DC4 211:959.920 JLINK_BeginDownload(Flags = 0x00000000)
+T6DC4 211:959.936 - 0.012ms 
+T6DC4 211:959.952 JLINK_WriteMem(0x00000000, 0x6DD8 Bytes, ...)
+T6DC4 211:959.952   Data:  90 58 00 20 01 0B 00 00 F9 0B 00 00 F9 0B 00 00 ...
+T6DC4 211:960.160   completely In flash
+T6DC4 211:960.160 - 0.222ms returns 0x6DD8
+T6DC4 211:960.288 JLINK_WriteMem(0x00006DD8, 0x1E4 Bytes, ...)
+T6DC4 211:960.304   Data:  01 00 00 00 6C 68 00 00 00 00 00 00 04 00 00 20 ...
+T6DC4 211:960.320   completely In flash
+T6DC4 211:960.336 - 0.041ms returns 0x1E4
+T6AC4 212:154.464 JLINK_IsHalted()
+T6AC4 212:154.512 - 0.035ms returns TRUE
+T6DC4 212:155.024 JLINK_EndDownload()
+T6DC4 212:155.280   CPU_ReadMem(4 bytes @ 0x41006004)
+T6DC4 212:155.616   CPU_ReadMem(4 bytes @ 0xE000ED90)
+T6DC4 212:155.952    -- --------------------------------------
+T6DC4 212:155.952    -- Flash bank @ 0x00000000: Default: L2 verify disabled because algorithm performs L1 verify
+T6DC4 212:155.968    -- Start of determining dirty areas in flash cache
+T6DC4 212:155.984    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000000 if necessary
+T6DC4 212:156.000    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000100 if necessary
+T6DC4 212:156.000    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000200 if necessary
+T6DC4 212:156.000    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000300 if necessary
+T6DC4 212:156.016    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000400 if necessary
+T6DC4 212:156.032    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000500 if necessary
+T6DC4 212:156.032    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000600 if necessary
+T6DC4 212:156.048    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000700 if necessary
+T6DC4 212:156.064    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000800 if necessary
+T6DC4 212:156.064    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000900 if necessary
+T6DC4 212:156.064    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000A00 if necessary
+T6DC4 212:156.080    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000B00 if necessary
+T6DC4 212:156.096    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000C00 if necessary
+T6DC4 212:156.096    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000D00 if necessary
+T6DC4 212:156.176    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000E00 if necessary
+T6DC4 212:156.176    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000F00 if necessary
+T6DC4 212:156.192    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001000 if necessary
+T6DC4 212:156.192    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001100 if necessary
+T6DC4 212:156.192    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001200 if necessary
+T6DC4 212:156.208    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001300 if necessary
+T6DC4 212:156.224    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001400 if necessary
+T6DC4 212:156.240    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001500 if necessary
+T6DC4 212:156.240    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001600 if necessary
+T6DC4 212:156.256    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001700 if necessary
+T6DC4 212:156.256    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001800 if necessary
+T6DC4 212:156.256    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001900 if necessary
+T6DC4 212:156.288    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001A00 if necessary
+T6DC4 212:156.288    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001B00 if necessary
+T6DC4 212:156.304    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001C00 if necessary
+T6DC4 212:156.320    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001D00 if necessary
+T6DC4 212:156.320    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001E00 if necessary
+T6DC4 212:156.320    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001F00 if necessary
+T6DC4 212:156.336    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002000 if necessary
+T6DC4 212:156.352    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002100 if necessary
+T6DC4 212:156.352    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002200 if necessary
+T6DC4 212:156.368    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002300 if necessary
+T6DC4 212:156.384    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002400 if necessary
+T6DC4 212:156.384    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002500 if necessary
+T6DC4 212:156.384    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002600 if necessary
+T6DC4 212:156.400    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002700 if necessary
+T6DC4 212:156.416    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002800 if necessary
+T6DC4 212:156.416    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002900 if necessary
+T6DC4 212:156.432    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002A00 if necessary
+T6DC4 212:156.448    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002B00 if necessary
+T6DC4 212:156.448    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002C00 if necessary
+T6DC4 212:156.448    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002D00 if necessary
+T6DC4 212:156.464    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002E00 if necessary
+T6DC4 212:156.480    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002F00 if necessary
+T6DC4 212:156.480    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003000 if necessary
+T6DC4 212:156.496    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003100 if necessary
+T6DC4 212:156.512    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003200 if necessary
+T6DC4 212:156.512    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003300 if necessary
+T6DC4 212:156.512    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003400 if necessary
+T6DC4 212:156.528    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003500 if necessary
+T6DC4 212:156.544    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003600 if necessary
+T6DC4 212:156.544    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003700 if necessary
+T6DC4 212:156.560    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003800 if necessary
+T6DC4 212:156.576    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003900 if necessary
+T6DC4 212:156.576    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003A00 if necessary
+T6DC4 212:156.576    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003B00 if necessary
+T6DC4 212:156.592    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003C00 if necessary
+T6DC4 212:156.608    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003D00 if necessary
+T6DC4 212:156.608    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003E00 if necessary
+T6DC4 212:156.624    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003F00 if necessary
+T6DC4 212:156.640    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004000 if necessary
+T6DC4 212:156.640    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004100 if necessary
+T6DC4 212:156.640    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004200 if necessary
+T6DC4 212:156.656    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004300 if necessary
+T6DC4 212:156.672    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004400 if necessary
+T6DC4 212:156.672    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004500 if necessary
+T6DC4 212:156.688    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004600 if necessary
+T6DC4 212:156.704    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004700 if necessary
+T6DC4 212:156.704    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004800 if necessary
+T6DC4 212:156.704    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004900 if necessary
+T6DC4 212:156.720    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004A00 if necessary
+T6DC4 212:156.736    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004B00 if necessary
+T6DC4 212:156.736    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004C00 if necessary
+T6DC4 212:156.752    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004D00 if necessary
+T6DC4 212:156.768    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004E00 if necessary
+T6DC4 212:156.768    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004F00 if necessary
+T6DC4 212:156.768    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005000 if necessary
+T6DC4 212:156.784    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005100 if necessary
+T6DC4 212:156.800    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005200 if necessary
+T6DC4 212:156.800    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005300 if necessary
+T6DC4 212:156.832    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005400 if necessary
+T6DC4 212:156.832    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005500 if necessary
+T6DC4 212:156.848    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005600 if necessary
+T6DC4 212:156.864    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005700 if necessary
+T6DC4 212:156.880    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005800 if necessary
+T6DC4 212:156.880    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005900 if necessary
+T6DC4 212:156.896    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005A00 if necessary
+T6DC4 212:156.896    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005B00 if necessary
+T6DC4 212:156.896    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005C00 if necessary
+T6DC4 212:156.912    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005D00 if necessary
+T6DC4 212:156.928    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005E00 if necessary
+T6DC4 212:156.944    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005F00 if necessary
+T6DC4 212:156.944    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006000 if necessary
+T6DC4 212:156.960    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006100 if necessary
+T6DC4 212:156.960    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006200 if necessary
+T6DC4 212:156.976    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006300 if necessary
+T6DC4 212:156.992    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006400 if necessary
+T6DC4 212:156.992    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006500 if necessary
+T6DC4 212:157.008    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006600 if necessary
+T6DC4 212:157.024    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006700 if necessary
+T6DC4 212:157.024    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006800 if necessary
+T6DC4 212:157.024    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006900 if necessary
+T6DC4 212:157.040    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006A00 if necessary
+T6DC4 212:157.056    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006B00 if necessary
+T6DC4 212:157.072    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006C00 if necessary
+T6DC4 212:157.072    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006D00 if necessary
+T6DC4 212:157.088    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006E00 if necessary
+T6DC4 212:157.088    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006F00 if necessary
+T6DC4 212:157.152    -- End of determining dirty areas
+T6DC4 212:157.152    -- Start of preparing flash programming
+T6DC4 212:157.168    -- Calculating RAM usage
+T6DC4 212:157.184    -- RAM usage = 3908 Bytes
+T6DC4 212:157.184    -- Preserving CPU registers
+T6DC4 212:157.216    -- Preparing target
+T6DC4 212:157.216    -- Preserving target RAM temporarily used for programming
+T6DC4 212:185.152    -- Downloading RAMCode
+T6DC4 212:207.024    -- Preparing RAMCode
+T6DC4 212:213.760    -- End of preparing flash programming
+T6DC4 212:221.856    -- CPU speed could not be measured.
+T6DC4 212:221.872    -- Start of comparing flash
+T6DC4 212:221.888    -- CRC check was estimated as fastest method
+T6DC4 212:308.384    -- Comparing range 0x0000 - 0x6FFF (112 Sectors, 28 KB), using multi-block CRC calculation
+T6DC4 212:387.040    -- CRC does not match for sectors 0-111
+T6DC4 212:387.072    -- End of comparing flash
+T6DC4 212:387.088    -- Start of erasing sectors
+T6DC4 212:387.088    -- End of erasing sectors
+T6DC4 212:387.104    -- Start of flash programming
+T6DC4 212:387.104    -- Programming range 0x00000000 - 0x00006FFF (112 Sectors, 28 KB)
+T6DC4 212:818.416    -- End of flash programming
+T6DC4 212:818.448    -- 0x0000 - 0x6FFF (112 Sectors, 28 KB)
+T6DC4 212:818.464    -- Start of restoring
+T6DC4 212:818.464    -- Restoring RAMCode
+T6DC4 212:849.744    -- Restoring target memory
+T6DC4 212:876.672    -- Restore target
+T6DC4 212:876.720    -- Restoring CPU registers
+T6DC4 212:876.736    -- End of restoring
+T6DC4 212:876.784    -- Bank 0 @ 0x00000000: 1 range affected (28672 bytes)
+T6DC4 212:876.816    -- Total: 0.719s (Prepare: 0.064s, Compare: 0.165s, Erase: 0.000s, Program & Verify: 0.455s, Restore: 0.033s)
+T6DC4 212:876.832    -- Program & Verify speed: 62 KB/s
+T6DC4 212:880.576 - 725.548ms returns 28672 (0x7000)
+T6DC4 212:881.488 JLINK_ResetPullsRESET(ON)
+T6DC4 212:881.504 - 0.023ms 
+T6DC4 212:881.520 JLINK_ResetNoHalt()
+T6DC4 212:881.984   InitTarget() start
+T6DC4 212:882.000    J-Link Script File: Executing InitTarget()
+T6DC4 212:882.016   InitTarget()
+T6DC4 212:884.576   InitTarget() end - Took 2.54ms
+T6DC4 212:885.120   Found SW-DP with ID 0x0BC11477
+T6DC4 212:887.360   DPIDR: 0x0BC11477
+T6DC4 212:887.376   CoreSight SoC-400 or earlier
+T6DC4 212:887.392   AP map detection skipped. Manually configured AP map found.
+T6DC4 212:887.392   AP[0]: AHB-AP (IDR: Not set, ADDR: 0x00000000)
+T6DC4 212:888.304   AP[0]: Core found
+T6DC4 212:888.320   AP[0]: AHB-AP ROM base: 0x41003000
+T6DC4 212:888.768   CPUID register: 0x410CC601. Implementer code: 0x41 (ARM)
+T6DC4 212:888.784   Found Cortex-M0 r0p1, Little endian.
+T6DC4 212:888.928   -- Max. mem block: 0x000027A0
+T6DC4 212:888.928   Cortex-M: The connected J-Link (S/N 801056949) uses an old firmware module: V2 (current is 3)
+T6DC4 212:888.944   CPU_ReadMem(4 bytes @ 0xE000EDF0)
+T6DC4 212:889.296   CPU_ReadMem(4 bytes @ 0xE0002000)
+T6DC4 212:889.648   FPUnit: 4 code (BP) slots and 0 literal slots
+T6DC4 212:889.664   CPU_ReadMem(4 bytes @ 0xE000EDFC)
+T6DC4 212:890.000   CPU_ReadMem(4 bytes @ 0xE0001000)
+T6DC4 212:890.336   CoreSight components:
+T6DC4 212:890.336   ROMTbl[0] @ 41003000
+T6DC4 212:890.352   CPU_ReadMem(64 bytes @ 0x41003000)
+T6DC4 212:891.168   CPU_ReadMem(32 bytes @ 0xE00FFFE0)
+T6DC4 212:891.792   [0][0]: E00FF000 CID B105100D PID 000BB4C0 ROM Table
+T6DC4 212:891.808   ROMTbl[1] @ E00FF000
+T6DC4 212:891.808   CPU_ReadMem(64 bytes @ 0xE00FF000)
+T6DC4 212:892.640   CPU_ReadMem(32 bytes @ 0xE000EFE0)
+T6DC4 212:893.216   [1][0]: E000E000 CID B105E00D PID 000BB008 SCS
+T6DC4 212:893.216   CPU_ReadMem(32 bytes @ 0xE0001FE0)
+T6DC4 212:893.792   [1][1]: E0001000 CID B105E00D PID 000BB00A DWT
+T6DC4 212:893.808   CPU_ReadMem(32 bytes @ 0xE0002FE0)
+T6DC4 212:894.384   [1][2]: E0002000 CID B105E00D PID 000BB00B FPB
+T6DC4 212:894.400   CPU_ReadMem(32 bytes @ 0x41006FE0)
+T6DC4 212:894.944   [0][1]: 41006000 CID B105900D PID 001BB932 MTB-M0+
+T6DC4 212:894.960   JLINK_Reset()
+T6DC4 212:894.976     CPU_ReadMem(4 bytes @ 0x20000000)
+T6DC4 212:895.328     CPU_WriteMem(4 bytes @ 0x20000000)
+T6DC4 212:895.696     ResetTarget() start
+T6DC4 212:895.712      J-Link Script File: Executing ResetTarget()
+T6DC4 212:896.048     CPU_ReadMem(4 bytes @ 0xE000EDFC)
+T6DC4 212:896.416     CPU_WriteMem(4 bytes @ 0xE000EDFC)
+T6DC4 212:896.800     CPU_WriteMem(4 bytes @ 0xE000ED0C)
+T6DC4 212:898.848     CPU_ReadMem(4 bytes @ 0xE000EDF0)
+T6DC4 212:899.328     CPU_ReadMem(4 bytes @ 0x41002100)
+T6DC4 212:899.696     CPU_WriteMem(4 bytes @ 0x41002100)
+T6DC4 212:900.080     CPU_ReadMem(4 bytes @ 0x41002100)
+T6DC4 212:900.432     CPU_WriteMem(4 bytes @ 0xE000EDFC)
+T6DC4 212:900.880     ResetTarget() end - Took 5.12ms
+T6DC4 212:900.896     Device specific reset executed.
+T6DC4 212:904.512     CPU_WriteMem(4 bytes @ 0xE0002000)
+T6DC4 212:904.896     CPU_ReadMem(4 bytes @ 0xE000EDFC)
+T6DC4 212:905.264     CPU_ReadMem(4 bytes @ 0xE0001000)
+T6DC4 212:905.600     CPU_WriteMem(4 bytes @ 0xE0001000)
+T6DC4 212:905.952   - 10.995ms 
+T6DC4 212:905.968   JLINK_Go()
+T6DC4 212:905.984     CPU_ReadMem(4 bytes @ 0xE0001000)
+T6DC4 212:906.288     CPU_WriteMem(4 bytes @ 0xE0001000)
+T6DC4 212:906.656     CPU_WriteMem(4 bytes @ 0xE0001004)
+T6DC4 212:907.536     Memory map 'after startup completion point' is active
+T6DC4 212:907.552   - 1.572ms 
+T6DC4 212:907.552 - 26.031ms 
+T6DC4 212:914.192 JLINK_Close()
+T6DC4 212:926.240 - 12.019ms
+T6DC4 212:926.240   
+T6DC4 212:926.256   Closed

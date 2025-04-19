@@ -1,0 +1,12 @@
+T6DC4 211:553.072   SEGGER J-Link V8.26 Log File
+T6DC4 211:553.136   DLL Compiled: Apr 11 2025 07:49:49
+T6DC4 211:553.152   Logging started @ 2025-04-19 19:22
+T6DC4 211:553.184   Process: C:\Program Files (x86)\Atmel\Studio\7.0\atbackend\atbackend.exe
+T6DC4 211:553.184 - 57872.856ms 
+T6DC4 211:558.896 JLINK_ExecCommand("Device = ATSAMD21G18A", ...). 
+T6DC4 211:559.152   Device "ATSAMD21G18A" selected.
+T6DC4 211:559.456 - 0.517ms returns 0x00
+T6DC4 211:586.160 JLINK_Close()
+T6DC4 211:602.272 - 16.119ms
+T6DC4 211:602.352   
+T6DC4 211:602.368   Closed
